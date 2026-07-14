@@ -14,7 +14,7 @@
 - [7. Hướng dẫn cài đặt & Chạy dự án](#-7-hướng-dẫn-cài-đặt--chạy-dự-án)
 - [8. Hệ thống Dashboard Phân tích (Looker Studio)](#-8-hệ-thống-dashboard-phân-tích-looker-studio)
 - [9. Đề xuất Kinh doanh (Actionable Insights)](#-9-đề-xuất-kinh-doanh-actionable-insights)
-- [10. Bài học Rút ra (What I Learned)](#-10-bài-học-rút-ra-what-i-learned)
+- [10. Mình đã học được gì qua dự án ? ](#-10-Mình-đã-học-được-gì-qua-dự-án-?)
 
 ---
 

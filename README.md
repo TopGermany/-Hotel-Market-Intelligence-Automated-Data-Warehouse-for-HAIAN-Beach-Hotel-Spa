@@ -82,7 +82,6 @@ Dự án được xây dựng dựa trên kiến trúc hiện đại **Medallion
 ---
 
 ## ⚙️ 7. Hướng dẫn cài đặt & Chạy dự án
-*(Dành cho nhà tuyển dụng & kỹ sư đánh giá)*
 1. Clone repository này về máy và cấu hình file `.env` với GCP Credentials.
 2. Chạy lệnh `docker compose up -d --build` để khởi động môi trường Airflow và Docker.
 3. Truy cập giao diện Airflow tại `http://localhost:8080` và trigger DAG `haian_competitor_price_pipeline`.

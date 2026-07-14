@@ -31,6 +31,7 @@ def run_command(args: list[str], timeout: int = 8) -> CommandResult:
             cwd=PROJECT_ROOT,
             capture_output=True,
             text=True,
+            encoding="utf-8",
             timeout=timeout,
             check=False,
         )
@@ -71,7 +72,7 @@ def _parse_compose_ps(stdout: str) -> dict[str, object]:
             "status": data.get("Status") or "",
             "ports": ports,
         }
-    return {"name": "haian_airflow", "service": "airflow-standalone", "state": "unknown", "status": stdout.strip(), "ports": []}
+    return {"name": "haian_airflow", "service": "airflow-standalone", "state": "unknown", "status": "None", "ports": [], "error": f"RAW STDOUT: {stdout.strip()}"}
 
 
 def _parse_dag_list(stdout: str) -> dict[str, object]:

@@ -32,6 +32,7 @@
 
 <!-- 📸 THÊM ẢNH SƠ ĐỒ WORKFLOW/PIPELINE VÀO DÒNG BÊN DƯỚI -->
 <img width="1774" height="887" alt="f17ac0ee-86e2-4667-908e-d382a0c377ab" src="https://github.com/user-attachments/assets/f4dc0267-a11f-4cd7-8311-5d8dc3b3bae1" />
+
 Hệ thống hoạt động tự động hàng ngày mà không cần can thiệp thủ công:
 1. **Extract (Trích xuất):** Các bot Playwright tự động cào (scrape) giá phòng của đối thủ từ OTA.
 2. **Validate (Kiểm tra):** ETL Agent (viết bằng Python) áp dụng các luật kiểm tra chất lượng dữ liệu (Data Quality) nghiêm ngặt.

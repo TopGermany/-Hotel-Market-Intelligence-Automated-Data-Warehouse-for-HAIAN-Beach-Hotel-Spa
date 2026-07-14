@@ -125,7 +125,7 @@ Dựa trên dữ liệu được thu thập và phân tích từ hệ thống Da
 
 ---
 
-## 🎓 10. Bài học Rút ra (What I Learned)
+## 🎓 10. Mình đã học được gì qua dự án ? 
 Thông qua việc tự tay xây dựng dự án Data Warehouse toàn diện này, tôi đã đúc kết được những kinh nghiệm vô giá không chỉ về mặt công cụ mà còn về tư duy giải quyết vấn đề:
 
 * **Quản trị Pipeline với Apache Airflow:** Hiểu sâu về cách điều phối (Orchestration), lên lịch trình (DAGs) và giám sát trạng thái của các luồng dữ liệu (ETL pipeline). Điều này giúp tôi nhận ra tầm quan trọng của việc tự động hóa và khả năng theo dõi luồng dữ liệu một cách trực quan thay vì chạy script thủ công.

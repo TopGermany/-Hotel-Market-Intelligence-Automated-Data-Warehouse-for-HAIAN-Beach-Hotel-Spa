@@ -17,7 +17,8 @@
 *(Tổng quan về cách dữ liệu được luân chuyển từ nguồn đến Dashboard)*
 
 <!-- 📸 THÊM ẢNH SƠ ĐỒ WORKFLOW/PIPELINE VÀO DÒNG BÊN DƯỚI -->
-![Project Workflow](assets/images/workflow_diagram.png)
+<img width="1774" height="887" alt="f17ac0ee-86e2-4667-908e-d382a0c377ab" src="https://github.com/user-attachments/assets/945eea2b-0eb9-462a-926d-98c8d38d34f8" />
+
 
 Hệ thống hoạt động tự động hàng ngày mà không cần can thiệp thủ công:
 1. **Extract (Trích xuất):** Các bot Playwright tự động cào (scrape) giá phòng của đối thủ từ OTA.
@@ -49,7 +50,8 @@ Dự án được xây dựng dựa trên kiến trúc hiện đại **Medallion
 Để tổ chức Data Warehouse một cách hiệu quả, dữ liệu được mô hình hóa theo **Star Schema (Mô hình sao)**. Thiết kế này giúp tối ưu hóa hiệu suất truy vấn trong BigQuery và cực kỳ trực quan khi kéo thả báo cáo trên Looker Studio.
 
 <!-- 📸 THÊM ẢNH ERD VÀO DÒNG BÊN DƯỚI -->
-![Entity Relationship Diagram](assets/images/erd_diagram.png)
+<img width="2110" height="2160" alt="Quan_ly_TK" src="https://github.com/user-attachments/assets/35382851-6443-4c72-81bf-824d4780c97d" />
+
 
 **Các thành phần chính:**
 - **Bảng Fact (Sự kiện):** `fact_booking`, `fact_room_revenue_daily`, `fact_room_cost_daily`, `fact_competitor_price_snapshot`. Lưu trữ các chỉ số định lượng (doanh thu, chi phí, giá đối thủ).
@@ -94,19 +96,22 @@ Dự án được xây dựng dựa trên kiến trúc hiện đại **Medallion
 
 ### 💰 8.1. Dashboard Quản trị Doanh thu (Revenue Management)
 <!-- 📸 THÊM ẢNH REVENUE DASHBOARD VÀO DÒNG BÊN DƯỚI -->
-![Revenue Management Dashboard](assets/images/revenue_dashboard.png)
+<img width="1152" height="691" alt="image" src="https://github.com/user-attachments/assets/fa99c41f-a131-47ba-aec2-96a3119e3638" />
+
 
 **Phân tích & Insight:** Phân rã doanh thu theo Kênh (Channel) và Phân khúc Khách hàng (Customer Segment). Giúp phát hiện nhanh tình trạng nếu Công suất phòng (Occupancy) rất cao nhưng RevPAR lại thấp, báo hiệu rằng khách sạn đang bán phòng với giá quá rẻ.
 
 ### 📈 8.2. Dashboard Phân tích Lợi nhuận (Profitability Management)
 <!-- 📸 THÊM ẢNH PROFITABILITY DASHBOARD VÀO DÒNG BÊN DƯỚI -->
-![Profitability Management Dashboard](assets/images/profitability_dashboard.png)
+<img width="1155" height="695" alt="image" src="https://github.com/user-attachments/assets/87a986dd-b277-4680-8ed1-3fb6ae3353b4" />
+
 
 **Phân tích & Insight:** Trực quan hóa dòng chảy (Waterfall) từ Doanh thu gộp đến Lợi nhuận ròng. Trả lời câu hỏi sống còn: *"Liệu các chương trình voucher và tiền hoa hồng OTA có đang "ăn" hết lợi nhuận của chúng ta không?"* Dashboard giúp xác định chính xác ProfitPAR thực tế mang lại từ từng nguồn đặt phòng.
 
 ### 🕵️ 8.3. Dashboard Tình báo Thị trường (Market Intelligence)
 <!-- 📸 THÊM ẢNH MARKET INTELLIGENCE DASHBOARD VÀO DÒNG BÊN DƯỚI -->
-![Market Intelligence Dashboard](assets/images/market_intelligence_dashboard.png)
+<img width="1155" height="691" alt="image" src="https://github.com/user-attachments/assets/321ac195-c864-4ad6-82cb-d1c3a3763e91" />
+
 
 **Phân tích & Insight:** So sánh ADR (Giá bán bình quân) của HAIAN với giá trung bình của thị trường xung quanh. Hệ thống trực quan hóa cảnh báo ngay lập tức khi đối thủ giảm giá mạnh hoặc hết phòng (Sold-out). Từ đó, khách sạn có thể áp dụng chiến lược **Định giá Động (Dynamic Pricing)** một cách linh hoạt.
 

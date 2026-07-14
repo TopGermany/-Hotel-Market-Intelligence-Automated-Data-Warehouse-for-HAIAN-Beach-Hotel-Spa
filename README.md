@@ -4,6 +4,20 @@
 ![Tech Stack](https://img.shields.io/badge/Stack-Python%20%7C%20Airflow%20%7C%20BigQuery-success)
 ![Data Analyst](https://img.shields.io/badge/Role-Data%20Analyst%20%2B%20Data%20Engineer-orange)
 
+## 📑 Mục lục (Table of Contents)
+- [1. Tổng quan Dự án & Bài toán Kinh doanh](#-1-tổng-quan-dự-án--bài-toán-kinh-doanh)
+- [2. Luồng xử lý Dữ liệu (Data Pipeline Workflow)](#-2-luồng-xử-lý-dữ-liệu-data-pipeline-workflow)
+- [3. Kiến trúc Kỹ thuật (Data Engineering)](#-3-kiến-trúc-kỹ-thuật-data-engineering)
+- [4. Mô hình hóa Dữ liệu (ERD)](#-4-mô-hình-hóa-dữ-liệu-erd---entity-relationship-diagram)
+- [5. Cấu trúc Thư mục (Repository Structure)](#-5-cấu-trúc-thư-mục-repository-structure)
+- [6. Kỹ năng Ứng dụng](#-6-kỹ-năng-ứng-dụng)
+- [7. Hướng dẫn cài đặt & Chạy dự án](#-7-hướng-dẫn-cài-đặt--chạy-dự-án)
+- [8. Hệ thống Dashboard Phân tích (Looker Studio)](#-8-hệ-thống-dashboard-phân-tích-looker-studio)
+- [9. Đề xuất Kinh doanh (Actionable Insights)](#-9-đề-xuất-kinh-doanh-actionable-insights)
+- [10. Bài học Rút ra (What I Learned)](#-10-bài-học-rút-ra-what-i-learned)
+
+---
+
 ## 📌 1. Tổng quan Dự án & Bài toán Kinh doanh
 Đây là một dự án Data Engineering & Analytics (từ A đến Z) được thiết kế nhằm giải quyết bài toán cốt lõi về Quản trị Doanh thu (Revenue Management) cho **Khách sạn HAIAN Beach Hotel & Spa (Đà Nẵng)**.
 
@@ -17,8 +31,7 @@
 *(Tổng quan về cách dữ liệu được luân chuyển từ nguồn đến Dashboard)*
 
 <!-- 📸 THÊM ẢNH SƠ ĐỒ WORKFLOW/PIPELINE VÀO DÒNG BÊN DƯỚI -->
-<img width="1774" height="887" alt="f17ac0ee-86e2-4667-908e-d382a0c377ab" src="https://github.com/user-attachments/assets/945eea2b-0eb9-462a-926d-98c8d38d34f8" />
-
+![Project Workflow](assets/images/workflow_diagram.png)
 
 Hệ thống hoạt động tự động hàng ngày mà không cần can thiệp thủ công:
 1. **Extract (Trích xuất):** Các bot Playwright tự động cào (scrape) giá phòng của đối thủ từ OTA.
@@ -50,8 +63,7 @@ Dự án được xây dựng dựa trên kiến trúc hiện đại **Medallion
 Để tổ chức Data Warehouse một cách hiệu quả, dữ liệu được mô hình hóa theo **Star Schema (Mô hình sao)**. Thiết kế này giúp tối ưu hóa hiệu suất truy vấn trong BigQuery và cực kỳ trực quan khi kéo thả báo cáo trên Looker Studio.
 
 <!-- 📸 THÊM ẢNH ERD VÀO DÒNG BÊN DƯỚI -->
-<img width="2110" height="2160" alt="Quan_ly_TK" src="https://github.com/user-attachments/assets/35382851-6443-4c72-81bf-824d4780c97d" />
-
+![Entity Relationship Diagram](assets/images/erd_diagram.png)
 
 **Các thành phần chính:**
 - **Bảng Fact (Sự kiện):** `fact_booking`, `fact_room_revenue_daily`, `fact_room_cost_daily`, `fact_competitor_price_snapshot`. Lưu trữ các chỉ số định lượng (doanh thu, chi phí, giá đối thủ).
@@ -82,6 +94,7 @@ Dự án được xây dựng dựa trên kiến trúc hiện đại **Medallion
 ---
 
 ## ⚙️ 7. Hướng dẫn cài đặt & Chạy dự án
+*(Dành cho nhà tuyển dụng & kỹ sư đánh giá)*
 1. Clone repository này về máy và cấu hình file `.env` với GCP Credentials.
 2. Chạy lệnh `docker compose up -d --build` để khởi động môi trường Airflow và Docker.
 3. Truy cập giao diện Airflow tại `http://localhost:8080` và trigger DAG `haian_competitor_price_pipeline`.
@@ -95,22 +108,19 @@ Dự án được xây dựng dựa trên kiến trúc hiện đại **Medallion
 
 ### 💰 8.1. Dashboard Quản trị Doanh thu (Revenue Management)
 <!-- 📸 THÊM ẢNH REVENUE DASHBOARD VÀO DÒNG BÊN DƯỚI -->
-<img width="1152" height="691" alt="image" src="https://github.com/user-attachments/assets/fa99c41f-a131-47ba-aec2-96a3119e3638" />
-
+![Revenue Management Dashboard](assets/images/revenue_dashboard.png)
 
 **Phân tích & Insight:** Phân rã doanh thu theo Kênh (Channel) và Phân khúc Khách hàng (Customer Segment). Giúp phát hiện nhanh tình trạng nếu Công suất phòng (Occupancy) rất cao nhưng RevPAR lại thấp, báo hiệu rằng khách sạn đang bán phòng với giá quá rẻ.
 
 ### 📈 8.2. Dashboard Phân tích Lợi nhuận (Profitability Management)
 <!-- 📸 THÊM ẢNH PROFITABILITY DASHBOARD VÀO DÒNG BÊN DƯỚI -->
-<img width="1155" height="695" alt="image" src="https://github.com/user-attachments/assets/87a986dd-b277-4680-8ed1-3fb6ae3353b4" />
-
+![Profitability Management Dashboard](assets/images/profitability_dashboard.png)
 
 **Phân tích & Insight:** Trực quan hóa dòng chảy (Waterfall) từ Doanh thu gộp đến Lợi nhuận ròng. Trả lời câu hỏi sống còn: *"Liệu các chương trình voucher và tiền hoa hồng OTA có đang "ăn" hết lợi nhuận của chúng ta không?"* Dashboard giúp xác định chính xác ProfitPAR thực tế mang lại từ từng nguồn đặt phòng.
 
 ### 🕵️ 8.3. Dashboard Tình báo Thị trường (Market Intelligence)
 <!-- 📸 THÊM ẢNH MARKET INTELLIGENCE DASHBOARD VÀO DÒNG BÊN DƯỚI -->
-<img width="1155" height="691" alt="image" src="https://github.com/user-attachments/assets/321ac195-c864-4ad6-82cb-d1c3a3763e91" />
-
+![Market Intelligence Dashboard](assets/images/market_intelligence_dashboard.png)
 
 **Phân tích & Insight:** So sánh ADR (Giá bán bình quân) của HAIAN với giá trung bình của thị trường xung quanh. Hệ thống trực quan hóa cảnh báo ngay lập tức khi đối thủ giảm giá mạnh hoặc hết phòng (Sold-out). Từ đó, khách sạn có thể áp dụng chiến lược **Định giá Động (Dynamic Pricing)** một cách linh hoạt.
 
